@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BankBranch.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Configuration.cs" />
     <Compile Include="enum%27s.cs" />
     <Compile Include="GuestRequest.cs" />
     <Compile Include="Host.cs" />
