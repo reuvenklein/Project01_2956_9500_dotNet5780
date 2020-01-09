@@ -64,7 +64,15 @@ namespace BL
 
         public void updateOrder(Order order)
         {
-            throw new NotImplementedException();
+            if (order.Status == BE.enum_s.orderStatus.נסגר_בהיענות_של_הלקוח)
+            {
+                throw new Exception("After the order status has changed to 'closing a deal' it is forbidden toto change the order status anymore.");
+            }
+            else
+            {
+
+            }
+
         }
     }
 }
