@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +13,7 @@ namespace BE
         public static int hostKey = 12;
         public static int HostingUnitKey = 23;
         public static int OrderKey = 45;
+        public static int Commission = 30;
 
 
     }
