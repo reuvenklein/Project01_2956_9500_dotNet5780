@@ -7,7 +7,7 @@ using BE;
 
 namespace DAL
 {
-    class Dal_imp : Idal
+    public class Dal_imp : Idal
     {
         public void addGuestRequest(GuestRequest guestRequest)
         {

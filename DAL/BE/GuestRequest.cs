@@ -27,7 +27,7 @@ namespace BE
         public int ChildrensAttractions { get; set; }
         public override string ToString()
         {
-            return base.ToString(); 
+            return PrivateName + ",    " + FamilyName + ",   " + MailAddress; 
         }
 
 

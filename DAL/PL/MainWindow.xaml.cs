@@ -12,7 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-///
+using System.Windows.Media.Animation;
+
+
 namespace PL
 {
     /// <summary>
@@ -20,9 +22,30 @@ namespace PL
     /// </summary>
     public partial class MainWindow : Window
     {
+        BL.Bl_imp bbb= new BL.Bl_imp();
+        List<BE.GuestRequest> guestRequestList;
+        List<BE.BankBranch> BankBranchList;
+        List<BE.HostingUnit> HostingUnitList;
+        List<BE.Order> OrderList;
+
+
         public MainWindow()
         {
             InitializeComponent();
+            guestRequestList = bbb.getAllGuestsRequestsList();
+            BankBranchList = bbb.getAllBankBranchesInIsraelList();
+            HostingUnitList = bbb.getAllHostingUnitsList();
+            OrderList = bbb.getAllOrdersList();
+
+            lvgetAllGuestsRequestsList.ItemsSource = guestRequestList;
+            lvgetAllBankBranchesInIsraelList.ItemsSource = BankBranchList;
+            lvgetAllOrdersList.ItemsSource = OrderList;
+            lvgetAllHostingUnitsList.ItemsSource = HostingUnitList;
+
+
         }
+
+
+
     }
 }

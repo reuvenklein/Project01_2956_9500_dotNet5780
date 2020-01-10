@@ -7,7 +7,7 @@ using BE;
 
 namespace BL
 {
-    class Bl_imp : IBL
+    public class Bl_imp : IBL
     {
         public void addGuestRequest(GuestRequest guestRequest)
         {
@@ -34,22 +34,26 @@ namespace BL
 
         public List<BankBranch> getAllBankBranchesInIsraelList()
         {
-            throw new NotImplementedException();
+            DAL.Dal_imp a = new DAL.Dal_imp();
+            return a.getAllBankBranchesInIsraelList();
         }
 
         public List<GuestRequest> getAllGuestsRequestsList()
         {
-            throw new NotImplementedException();
+            DAL.Dal_imp a = new DAL.Dal_imp();
+            return a.getAllGuestsRequestsList();
         }
 
         public List<HostingUnit> getAllHostingUnitsList()
         {
-            throw new NotImplementedException();
+            DAL.Dal_imp a = new DAL.Dal_imp();
+            return a.getAllHostingUnitsList();
         }
 
         public List<Order> getAllOrdersList()
         {
-            throw new NotImplementedException();
+            DAL.Dal_imp a = new DAL.Dal_imp();
+            return a.getAllOrdersList();
         }
 
         public void updateGuestRequest(GuestRequest guestRequest)
