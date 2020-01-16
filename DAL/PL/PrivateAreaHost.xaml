@@ -11,10 +11,10 @@
             <TabControl>
                
                
-                <TabItem>
+                <TabItem >
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="updateGuestRequest" Foreground="Red" />
+                            <TextBlock Text="הזמנה" Foreground="Red" />
                         </StackPanel>
                     </TabItem.Header>
                     <Grid>
@@ -22,38 +22,29 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
+                        <Border BorderBrush="Black" BorderThickness="2" Grid.Column="0"/>
+                        <Border BorderBrush="Black" BorderThickness="2" Grid.Column="1"/>
+
                         <StackPanel Grid.Column="0">
-                            <TextBox Text="first name"/>
-                            <TextBox Text="last name"/>
-                            <TextBox Text="MailAddress"/>
-                            <Label Content="RegistrationDate"/>
-                            <DatePicker />
-                            <Label Content="EntryDate"/>
-                            <DatePicker />
-                            <Label Content="ReleaseDate"/>
-                            <DatePicker />
-                            <ComboBox Text="Area"/>
-                            <ComboBox Text="SubArea"/>
-                            <ComboBox Text="Type"/>
-                            <ComboBox Text="Adults"/>
-                            <ComboBox Text="Children"/>
-                            <ComboBox Text="Pool"/>
-                            <ComboBox Text="Jacuzzi"/>
+                            <Label Content="רשימת הזמנות" HorizontalAlignment="Center" FontSize="20"/>
+                              
+                                    <ListView Margin="10" Height="300" Name="listorders"></ListView>
 
-                            <ComboBox Text="Garden"/>
-
-                            <ComboBox Text="ChildrensAttractions"/>
+                            <Button Content="עידכון הזמנה" HorizontalAlignment="Center" FontSize="20"/>
 
 
 
-
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+                            <Label Content="שאילתות רשימת לקוחות"  HorizontalAlignment="Center" FontSize="20"/>
+                           
                         </StackPanel>
                     </Grid>
                 </TabItem>
                 <TabItem>
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="addHostingUnit" Foreground="Green" />
+                            <TextBlock Text="עדכון יחידת אירוח" Foreground="Green" />
                         </StackPanel>
                     </TabItem.Header>
                     <Grid>
@@ -74,7 +65,7 @@
                 <TabItem>
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="deleteHostingUnit" Foreground="Green" />
+                            <TextBlock Text="מחיקת יחידת אירוח" Foreground="Green" />
                         </StackPanel>
                     </TabItem.Header>
                     <Grid>
@@ -92,79 +83,7 @@
                         </StackPanel>
                     </Grid>
                 </TabItem>
-                <TabItem>
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="updateHostingUnit" Foreground="Green" />
-                        </StackPanel>
-                    </TabItem.Header>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <StackPanel Grid.Column="0">
-                            <TextBox Text="HostingUnitName"/>
-                            <TextBox Text="Diary"/>
-                            <ComboBox Text="Owner"/>
-
-
-
-                        </StackPanel>
-                    </Grid>
-                </TabItem>
-                <TabItem>
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="addOrder" Foreground="Green" />
-                        </StackPanel>
-                    </TabItem.Header>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <StackPanel Grid.Column="0">
-                            <TextBox Text="HostingUnitName"/>
-                            <TextBox Text="Diary"/>
-                            <ComboBox Text="Status"/>
-                            <Label Content="CreateDate"/>
-                            <DatePicker />
-                            <Label Content="OrderDate"/>
-                            <DatePicker />
-
-
-
-                        </StackPanel>
-                    </Grid>
-                </TabItem>
-                <TabItem>
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="updateOrder" Foreground="Green" />
-                        </StackPanel>
-                    </TabItem.Header>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <StackPanel Grid.Column="0">
-                            <TextBox Text="HostingUnitName"/>
-                            <TextBox Text="Diary"/>
-                            <ComboBox Text="Status"/>
-                            <Label Content="CreateDate"/>
-                            <DatePicker />
-                            <Label Content="OrderDate"/>
-                            <DatePicker />
-
-
-
-                        </StackPanel>
-                    </Grid>
-                </TabItem>
-              
-       
+               
 
             </TabControl>
         </Grid>

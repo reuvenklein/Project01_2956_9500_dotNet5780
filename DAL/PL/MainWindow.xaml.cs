@@ -22,11 +22,11 @@ namespace PL
     /// </summary>
     public partial class MainWindow : Window
     {
-        BL.Bl_imp bbb= new BL.Bl_imp();
+        public static BL.Bl_imp bbb= new BL.Bl_imp();
         List<BE.GuestRequest> guestRequestList;
         List<BE.BankBranch> BankBranchList;
         List<BE.HostingUnit> HostingUnitList;
-        List<BE.Order> OrderList;
+        public static List<BE.Order> OrderList;
 
 
         public MainWindow()
@@ -41,6 +41,8 @@ namespace PL
             lvgetAllBankBranchesInIsraelList.ItemsSource = BankBranchList;
             lvgetAllOrdersList.ItemsSource = OrderList;
             lvgetAllHostingUnitsList.ItemsSource = HostingUnitList;
+
+          
 
 
         }

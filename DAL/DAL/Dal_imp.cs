@@ -65,32 +65,20 @@ namespace DAL
 
         public List<GuestRequest> getAllGuestsRequestsList()
         {
-            List<GuestRequest> tmpList = new List<GuestRequest>();
-            for (int i = 0; i < DS.DataSource.guestRequestList.Count; i++)
-            {
-                tmpList.Add(DS.DataSource.guestRequestList.ElementAt(i));
-            }
-            return tmpList;
+            return (from GuestRequest item in DS.DataSource.guestRequestList
+                    select item).ToList<GuestRequest>();
         }
 
         public List<HostingUnit> getAllHostingUnitsList()
-        {
-            List<HostingUnit> tmpList = new List<HostingUnit>();
-            for (int i = 0; i < DS.DataSource.hostingUnitList.Count; i++)
-            {
-                tmpList.Add(DS.DataSource.hostingUnitList.ElementAt(i));
-            }
-            return tmpList;
+        {          
+            return (from HostingUnit item in DS.DataSource.hostingUnitList
+                    select item).ToList<HostingUnit>();
         }
 
         public List<Order> getAllOrdersList()
         {
-            List<Order> tmpList = new List<Order>();
-            for (int i = 0; i < DS.DataSource.orderList.Count; i++)
-            {
-                tmpList.Add(DS.DataSource.orderList.ElementAt(i));
-            }
-            return tmpList;
+            return(from Order item in DS.DataSource.orderList
+                                      select item).ToList<Order>();
         }
 
         public void updateGuestRequest(GuestRequest guestRequest)

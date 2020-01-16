@@ -66,13 +66,19 @@ namespace BL
 
         public void updateOrder(Order order)
         {
+            List<Order> tmp = getAllOrdersList();
+            Order t = (Order)(from Order item in tmp
+                          where item.OrderKey == order.OrderKey
+                          select item);
+        
             if (order.Status == BE.enum_s.orderStatus.נסגר_בהיענות_של_הלקוח)
             {
                 throw new Exception("After the order status has changed to 'closing a deal' it is forbidden toto change the order status anymore.");
             }
-            else
+            else if (t.Status == BE.enum_s.orderStatus.נשלח_מייל)
             {
-
+                
+               
             }
 
         }

@@ -22,6 +22,13 @@ namespace PL
         public PrivateAreaHost()
         {
             InitializeComponent();
+
+             BL.Bl_imp b = new BL.Bl_imp();
+            List<BE.BankBranch> BankBranchList = b.getAllBankBranchesInIsraelList();
+
+
+
+            listorders.ItemsSource = BankBranchList;
         }
     }
 }
