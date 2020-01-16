@@ -45,7 +45,17 @@ namespace PL
 
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
 
+            PrivateAreaHost p1 = new PrivateAreaHost();
+            p1.Show();
+        }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            AddHostingUnitHost p1 = new AddHostingUnitHost();
+            p1.Show();
+        }
     }
 }

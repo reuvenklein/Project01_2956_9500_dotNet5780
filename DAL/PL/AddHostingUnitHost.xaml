@@ -1,0 +1,30 @@
+﻿<Window x:Class="PL.AddHostingUnitHost"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL"
+        mc:Ignorable="d"
+        Title="AddHostingUnitHost" Height="450" Width="800">
+    <Grid>
+        
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="addHostingUnit" Foreground="Green" />
+                </StackPanel>
+         
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <TextBox Text="HostingUnitName"/>
+                    <TextBox Text="Diary"/>
+                    <ComboBox Text="Owner"/>
+
+
+
+                </StackPanel>
+            </Grid>
+    </Grid>
+</Window>

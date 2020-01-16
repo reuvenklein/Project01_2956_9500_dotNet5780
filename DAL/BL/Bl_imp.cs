@@ -19,17 +19,15 @@ namespace BL
 
         public void addHostingUnit(HostingUnit hostingUnit)
         {
-            throw new NotImplementedException();
         }
 
-        public void addOrder(Order order)
+        public void addOrder(BE.GuestRequest guestRequest)
         {
-            throw new NotImplementedException();
+           
         }
 
         public void delleteHostingUnit(HostingUnit hostingUnit)
         {
-            throw new NotImplementedException();
         }
 
         public List<BankBranch> getAllBankBranchesInIsraelList()
