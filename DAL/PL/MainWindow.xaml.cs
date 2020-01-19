@@ -63,11 +63,12 @@ namespace PL
                 s.Height = (System.Windows.SystemParameters.PrimaryScreenHeight * 0.89);
                 s.Width = (System.Windows.SystemParameters.PrimaryScreenWidth * 0.89);
                 s.Show();
+                this.Close();
 
             }
             else
             {
-                MessageBox.Show("not working");
+                MessageBox.Show("Wrong Input");
             }
         }
         private void Button_Click(object sender, RoutedEventArgs e)
