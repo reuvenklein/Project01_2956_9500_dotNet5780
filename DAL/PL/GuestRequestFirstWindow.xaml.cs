@@ -15,20 +15,13 @@ using System.Windows.Shapes;
 namespace PL
 {
     /// <summary>
-    /// Interaction logic for PrivateAreaHost.xaml
+    /// Interaction logic for GuestRequestFirstWindow.xaml
     /// </summary>
-    public partial class PrivateAreaHost : Window
+    public partial class GuestRequestFirstWindow : Window
     {
-        public PrivateAreaHost()
+        public GuestRequestFirstWindow()
         {
             InitializeComponent();
-
-             BL.Bl_imp b = new BL.Bl_imp();
-            List<BE.BankBranch> BankBranchList = b.getAllBankBranchesInIsraelList();
-
-
-
-            listorders.ItemsSource = BankBranchList;
         }
     }
 }

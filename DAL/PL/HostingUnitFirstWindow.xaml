@@ -1,0 +1,164 @@
+﻿<Window x:Class="PL.HostingUnitFirstWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL"
+        mc:Ignorable="d"
+        Title="HostingUnitFirstWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl BorderBrush="Black" BorderThickness="2">
+
+            <TabItem Width="390" >
+                <TabItem.Header>
+                        <TextBlock Text="הוספת יחידת אירוח" Foreground="Red" />
+                </TabItem.Header>
+                <Grid>
+                   
+                </Grid>
+            </TabItem>
+            <TabItem Width="390">
+                <TabItem.Header>
+                        <TextBlock Text="איזור אישי" Foreground="Green" />
+                </TabItem.Header>
+                <Grid>
+                    <TabControl BorderBrush="Black" BorderThickness="2">
+
+
+                        <TabItem >
+                            <TabItem.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="הזמנה" Foreground="Red" />
+                                </StackPanel>
+                            </TabItem.Header>
+                            <Grid>
+                                <TabControl>
+                                    <TabItem Width="390" >
+                                        <TabItem.Header>
+                                            <TextBlock Text="שאילתות רשימת לקוחות" Foreground="Red" />
+                                        </TabItem.Header>
+                                        <Grid>
+                                            <StackPanel Grid.Column="1">
+                                                <Label Content="שאילתות רשימת לקוחות"  HorizontalAlignment="Center" FontSize="20"/>
+                                                <TabControl>
+                                                    <TabItem>
+                                                        <TabItem.Header>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <TextBlock Text="getAllHostingUnitsList" Foreground="Green" />
+                                                            </StackPanel>
+                                                        </TabItem.Header>
+
+                                                        <StackPanel >
+                                                            <ListView Margin="10" Name="lvgetAllHostingUnitsList"></ListView>
+                                                        </StackPanel>
+                                                    </TabItem>
+                                                    <TabItem>
+                                                        <TabItem.Header>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <TextBlock Text="getAllGuestsRequestsList" Foreground="Green" />
+                                                            </StackPanel>
+                                                        </TabItem.Header>
+                                                        <StackPanel >
+                                                            <ListView Margin="10" Name="lvgetAllGuestsRequestsList"></ListView>
+
+                                                        </StackPanel>
+                                                    </TabItem>
+                                                    <TabItem>
+                                                        <TabItem.Header>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <TextBlock Text="getAllOrdersList" Foreground="Green" />
+                                                            </StackPanel>
+                                                        </TabItem.Header>
+                                                        <StackPanel >
+                                                            <ListView Margin="10" Name="lvgetAllOrdersList"></ListView>
+
+                                                        </StackPanel>
+                                                    </TabItem>
+                                                    <TabItem>
+                                                        <TabItem.Header>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <TextBlock Text="getAllBankBranchesInIsraelList" Foreground="Green" />
+                                                            </StackPanel>
+                                                        </TabItem.Header>
+                                                        <StackPanel >
+                                                            <ListView Margin="10" Name="lvgetAllBankBranchesInIsraelList"></ListView>
+
+                                                        </StackPanel>
+                                                    </TabItem>
+                                                </TabControl>
+                                            </StackPanel>
+                                        </Grid>
+                                    </TabItem>
+                                    <TabItem Width="380">
+                                        <TabItem.Header>
+                                            <TextBlock Text="רשימת הזמנות" Foreground="Green" />
+                                        </TabItem.Header>
+                                        <Grid>
+                                            <StackPanel Grid.Column="0">
+                                                <Label Content="רשימת הזמנות" HorizontalAlignment="Center" FontSize="20"/>
+
+                                                <ListView Margin="10" Height="300" Name="listorders"></ListView>
+
+                                                <Button Content="עידכון הזמנה" HorizontalAlignment="Center" FontSize="20"/>
+
+
+
+                                            </StackPanel>
+                                        </Grid>
+                                    </TabItem>
+                                </TabControl>
+                            </Grid>
+                          
+                        </TabItem>
+                        <TabItem>
+                            <TabItem.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="עדכון יחידת אירוח" Foreground="Green" />
+                                </StackPanel>
+                            </TabItem.Header>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0">
+                                    <TextBox Text="HostingUnitName"/>
+                                    <TextBox Text="Diary"/>
+                                    <ComboBox Text="Owner"/>
+
+
+
+                                </StackPanel>
+                            </Grid>
+                        </TabItem>
+                        <TabItem>
+                            <TabItem.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="מחיקת יחידת אירוח" Foreground="Green" />
+                                </StackPanel>
+                            </TabItem.Header>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0">
+                                    <TextBox Text="HostingUnitName"/>
+                                    <TextBox Text="Diary"/>
+                                    <ComboBox Text="Owner"/>
+
+
+
+                                </StackPanel>
+                            </Grid>
+                        </TabItem>
+
+
+                    </TabControl>
+                </Grid>
+            </TabItem>
+           
+
+        </TabControl>
+    </Grid>
+</Window>

@@ -22,25 +22,13 @@ namespace PL
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static BL.Bl_imp bbb= new BL.Bl_imp();
-        List<BE.GuestRequest> guestRequestList;
-        List<BE.BankBranch> BankBranchList;
-        List<BE.HostingUnit> HostingUnitList;
-        public static List<BE.Order> OrderList;
+        
 
 
         public MainWindow()
         {
             InitializeComponent();
-            guestRequestList = bbb.getAllGuestsRequestsList();
-            BankBranchList = bbb.getAllBankBranchesInIsraelList();
-            HostingUnitList = bbb.getAllHostingUnitsList();
-            OrderList = bbb.getAllOrdersList();
-
-            //lvgetAllGuestsRequestsList.ItemsSource = guestRequestList;
-            //lvgetAllBankBranchesInIsraelList.ItemsSource = BankBranchList;
-            //lvgetAllOrdersList.ItemsSource = OrderList;
-            //lvgetAllHostingUnitsList.ItemsSource = HostingUnitList;
+          
 
             this.Height = (System.Windows.SystemParameters.PrimaryScreenHeight * 0.89);
             this.Width = (System.Windows.SystemParameters.PrimaryScreenWidth * 0.89);
@@ -57,13 +45,28 @@ namespace PL
 
         private void LoginFlyoutBtn_Click(object sender, RoutedEventArgs e)
         {
-            if ((UserName.Text == "a") && (Password.Password == "1"))
+            if ((UserName.Text == "a") || (Password.Password == "a"))
             {
-                PrivateAreaHost s = new PrivateAreaHost();
+                HostingUnitFirstWindow s = new HostingUnitFirstWindow();
                 s.Height = (System.Windows.SystemParameters.PrimaryScreenHeight * 0.89);
                 s.Width = (System.Windows.SystemParameters.PrimaryScreenWidth * 0.89);
                 s.Show();
-                this.Close();
+
+            }
+            else if ((UserName.Text == "b") || (Password.Password == "b"))
+            {
+                GuestRequestFirstWindow s = new GuestRequestFirstWindow();
+                s.Height = (System.Windows.SystemParameters.PrimaryScreenHeight * 0.89);
+                s.Width = (System.Windows.SystemParameters.PrimaryScreenWidth * 0.89);
+                s.Show();
+
+            }
+            else if ((UserName.Text == "c") || (Password.Password == "c"))
+            {
+                WebsiteManagerFirstWindow s = new WebsiteManagerFirstWindow();
+                s.Height = (System.Windows.SystemParameters.PrimaryScreenHeight * 0.89);
+                s.Width = (System.Windows.SystemParameters.PrimaryScreenWidth * 0.89);
+                s.Show();
 
             }
             else
@@ -71,17 +74,8 @@ namespace PL
                 MessageBox.Show("Wrong Input");
             }
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
+      
 
-            PrivateAreaHost p1 = new PrivateAreaHost();
-            p1.Show();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            AddHostingUnitHost p1 = new AddHostingUnitHost();
-            p1.Show();
-        }
+      
     }
 }
