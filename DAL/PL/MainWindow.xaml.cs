@@ -37,16 +37,39 @@ namespace PL
             HostingUnitList = bbb.getAllHostingUnitsList();
             OrderList = bbb.getAllOrdersList();
 
-            lvgetAllGuestsRequestsList.ItemsSource = guestRequestList;
-            lvgetAllBankBranchesInIsraelList.ItemsSource = BankBranchList;
-            lvgetAllOrdersList.ItemsSource = OrderList;
-            lvgetAllHostingUnitsList.ItemsSource = HostingUnitList;
+            //lvgetAllGuestsRequestsList.ItemsSource = guestRequestList;
+            //lvgetAllBankBranchesInIsraelList.ItemsSource = BankBranchList;
+            //lvgetAllOrdersList.ItemsSource = OrderList;
+            //lvgetAllHostingUnitsList.ItemsSource = HostingUnitList;
 
-          
+            this.Height = (System.Windows.SystemParameters.PrimaryScreenHeight * 0.89);
+            this.Width = (System.Windows.SystemParameters.PrimaryScreenWidth * 0.89);
+
+
+        }
+    
+
+        private void LoginFlyout_KeyDown(object sender, KeyEventArgs e)
+        {
 
 
         }
 
+        private void LoginFlyoutBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if ((UserName.Text == "a") && (Password.Password == "1"))
+            {
+                PrivateAreaHost s = new PrivateAreaHost();
+                s.Height = (System.Windows.SystemParameters.PrimaryScreenHeight * 0.89);
+                s.Width = (System.Windows.SystemParameters.PrimaryScreenWidth * 0.89);
+                s.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("not working");
+            }
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
