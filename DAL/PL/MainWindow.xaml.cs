@@ -45,7 +45,7 @@ namespace PL
 
         private void LoginFlyoutBtn_Click(object sender, RoutedEventArgs e)
         {
-            if ((UserName.Text == "a") || (Password.Password == "a"))
+            if ((UserName.Text == "reuven") && (Password.Password == "1234"))
             {
                 HostingUnitFirstWindow s = new HostingUnitFirstWindow();
                 s.Height = (System.Windows.SystemParameters.PrimaryScreenHeight * 0.89);

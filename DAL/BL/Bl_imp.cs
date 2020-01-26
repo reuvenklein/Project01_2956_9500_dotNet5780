@@ -7,8 +7,10 @@ using BE;
 
 namespace BL
 {
+   
     public class Bl_imp : IBL
     {
+      
         public void addGuestRequest(GuestRequest guestRequest)
         {
             if (!(guestRequest.EntryDate<guestRequest.ReleaseDate))
@@ -19,15 +21,29 @@ namespace BL
 
         public void addHostingUnit(HostingUnit hostingUnit)
         {
+
         }
 
         public void addOrder(BE.GuestRequest guestRequest)
         {
-           
+
         }
 
         public void delleteHostingUnit(HostingUnit hostingUnit)
         {
+
+            var a = getAllOrdersList();
+            foreach (var item in a)
+            {
+                if (hostingUnit.HostingUnitKey == item.HostingUnitKey)
+                {
+                    if (item.Status == BE.enum_s.orderStatus.נשלח_מייל || item.Status == BE.enum_s.orderStatus.טרם_טופל)
+                    {
+                        throw new Exception("cannot delete hosting unit while the request is not closed");
+                    }
+
+                }
+            }
         }
 
         public List<BankBranch> getAllBankBranchesInIsraelList()
@@ -56,12 +72,32 @@ namespace BL
 
         public void updateGuestRequest(GuestRequest guestRequest)
         {
-            throw new NotImplementedException();
+            
+
         }
 
         public void updateHostingUnit(HostingUnit hostingUnit)
         {
-            throw new NotImplementedException();
+            var a = getAllOrdersList();
+            var b = getAllGuestsRequestsList();
+            foreach (var item in a)
+            {
+                foreach(var item1 in b)
+                {
+                    if (hostingUnit.HostingUnitKey == item.HostingUnitKey&&item1.GuestRequestKey==item.GuestRequestKey)
+                    {
+                        if (item.Status == BE.enum_s.orderStatus.נסגר_בהיענות_של_הלקוח)
+                        {
+                            for (DateTime date = item1.EntryDate; date <= item1.ReleaseDate; date = date.AddDays(1))
+                            {
+                                hostingUnit.Diary[date.Day, date.Month] = true;
+
+                            }
+                        }
+                    }
+                }
+            }
+
         }
 
         public void updateOrder(Order order)
@@ -73,7 +109,7 @@ namespace BL
         
             if (order.Status == BE.enum_s.orderStatus.נסגר_בהיענות_של_הלקוח)
             {
-                throw new Exception("After the order status has changed to 'closing a deal' it is forbidden toto change the order status anymore.");
+                throw new Exception("After the order status has changed to 'closing a deal' it is forbidden to change the order status anymore.");
             }
             else if (t.Status == BE.enum_s.orderStatus.נשלח_מייל)
             {
